@@ -4,6 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fresh Home Food — Homely Meals, Made Daily</title>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Fresh Home Food — Homely Meals, Made Daily" />
+  <meta property="og:description" content="Limited-batch, homely lunch thalis. Pre-order by 10 am. Delivery 12:15–1:15 pm around Whitefield." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://freshhomefood.com/" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fresh Home Food — Homely Meals, Made Daily" />
+  <meta name="twitter:description" content="Limited-batch, homely lunch thalis. Pre-order by 10 am. Delivery 12:15–1:15 pm around Whitefield." />
+  <meta name="twitter:image" content="/og-image.jpg" />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <meta name="description" content="Fresh Home Food delivers homely, hygienic meals made fresh every day. Pre‑order your thali for lunch. Limited batches, no leftovers." />
   <meta name="theme-color" content="#0ea5e9" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +95,46 @@
       .grid-3{grid-template-columns:1fr}
       .grid-2{grid-template-columns:1fr}
     }
+    /* floating CTA */
+    .floating-cta{position:fixed;right:18px;bottom:18px;display:flex;gap:10px;z-index:60}
+    .floating-cta .fab{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:999px;border:1px solid rgba(148,163,184,.25);background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041014;font-weight:800;box-shadow:var(--shadow);text-decoration:none}
+    .floating-cta .ghost{background:rgba(2,8,23,.7);color:var(--text)}
+
+    /* details/summary FAQ */
+    details{background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:14px}
+    details+details{margin-top:10px}
+    summary{font-weight:700;cursor:pointer}
+
+    /* badge strip */
+    .strip{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{font-size:12px;border:1px solid rgba(148,163,184,.25);color:var(--muted);padding:6px 10px;border-radius:999px}
   </style>
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Fresh Home Food",
+    "url": "https://freshhomefood.com/",
+    "image": "https://freshhomefood.com/og-image.jpg",
+    "servesCuisine": "Indian Home Style",
+    "priceRange": "₹₹",
+    "areaServed": "Whitefield, Bengaluru",
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:30","closes":"13:15"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"09:30","closes":"13:15"}
+    ],
+    "sameAs": []
+  }
+  </script>
+
+  <!-- GA4 (replace G-XXXX with your id) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-XXXX');
+  </script>
 </head>
 <body>
   <header>
@@ -136,9 +189,15 @@
       <div class="container">
         <h2 class="section-title">Why Fresh Home Food</h2>
         <p class="sub">Short answer — we cook what we’d happily feed our own family. Limited menu keeps quality consistent and costs fair.</p>
-        <div class="grid-3">
+        <div class="strip" aria-label="highlights">
+          <span class="pill">FSSAI‑minded hygiene</span>
+          <span class="pill">Cold‑pressed oils</span>
+          <span class="pill">No added colours</span>
+          <span class="pill">Same‑day prep</span>
+        </div>
+        <div class="grid-3" style="margin-top:14px">
           <div class="item"><h4>Small batches</h4><p>We make a fixed number of plates. This keeps it fresh and avoids waste.</p></div>
-          <div class="item"><h4>Simple ingredients</h4><p>Local veggies, cold‑pressed oil, house‑made masalas. No shortcuts.</p></div>
+          <div class="item"><h4>Simple ingredients</h4><p>Local veggies, house‑made masalas. No shortcuts.</p></div>
           <div class="item"><h4>Predictable taste</h4><p>Same style every weekday so you know exactly what you’re getting.</p></div>
         </div>
       </div>
@@ -213,13 +272,39 @@
       <div class="container">
         <h2 class="section-title">FAQ</h2>
         <div class="grid-2">
-          <div class="item"><h4>Is it subscription‑based?</h4><p>No. You can pre‑order day‑to‑day. We’ll introduce weekly plans later.</p></div>
-          <div class="item"><h4>How do I pay?</h4><p>UPI at delivery or advance online. Details shared after you submit the form.</p></div>
-          <div class="item"><h4>Can I customize?</h4><p>We keep a fixed menu for consistency. Mention allergies in the form.</p></div>
-          <div class="item"><h4>Cut‑off time?</h4><p>10:00 am for same‑day lunch. Earlier is better as we close once batches fill.</p></div>
+          <details class="item" open>
+            <summary>Is it subscription‑based?</summary>
+            <p>No. You can pre‑order day‑to‑day. We’ll introduce weekly plans later.</p>
+          </details>
+          <details class="item">
+            <summary>How do I pay?</summary>
+            <p>UPI at delivery or advance online. We’ll share the UPI ID after you submit the form.</p>
+          </details>
+          <details class="item">
+            <summary>Cut‑off time?</summary>
+            <p>10:00 am for same‑day lunch. Earlier is better — we close once batches fill.</p>
+          </details>
+          <details class="item">
+            <summary>Customizations and allergies</summary>
+            <p>Menu is fixed to maintain quality. Mention allergies in the form and we’ll confirm feasibility.</p>
+          </details>
         </div>
       </div>
     </section>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Is it subscription‑based?","acceptedAnswer":{"@type":"Answer","text":"No. You can pre‑order day‑to‑day. We’ll introduce weekly plans later."}},
+        {"@type":"Question","name":"How do I pay?","acceptedAnswer":{"@type":"Answer","text":"UPI at delivery or advance online. We’ll share the UPI ID after you submit the form."}},
+        {"@type":"Question","name":"Cut‑off time?","acceptedAnswer":{"@type":"Answer","text":"10:00 am for same‑day lunch. We close once batches fill."}},
+        {"@type":"Question","name":"Customizations and allergies","acceptedAnswer":{"@type":"Answer","text":"Menu is fixed. Mention allergies in the form and we’ll confirm feasibility."}}
+      ]
+    }
+    </script>
 
     <!-- Final CTA with Google Form link -->
     <section id="order">
@@ -228,28 +313,61 @@
           <h2 style="margin:0">Ready to pre‑order?</h2>
           <p style="margin:0;color:#cbd5e1">Tell us your name, location, and preferred days. We’ll confirm on WhatsApp.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-            <!-- Primary button to open the Google Form in a new tab -->
-            <a class="btn" href="https://forms.gle/WpeC6XsXU51tmo8V8" target="_blank" rel="noopener">Open Pre‑Order Form</a>
-            <!-- Optional anchor copy for users who prefer link text -->
+            <a class="btn" href="https://forms.gle/WpeC6XsXU51tmo8V8" target="_blank" rel="noopener" aria-label="Open Google pre‑order form">Open Pre‑Order Form</a>
+            <a class="btn" href="https://wa.me/917046354607?text=Hi%20Fresh%20Home%20Food%2C%20I%20want%20to%20pre‑order" target="_blank" rel="noopener" aria-label="Open WhatsApp chat">WhatsApp us</a>
             <a href="https://forms.gle/WpeC6XsXU51tmo8V8" target="_blank" rel="noopener" style="align-self:center">or copy this link</a>
           </div>
           <small style="color:#9ca3af">Note: The form opens in a new tab. After submitting, leave WhatsApp number for quick confirmation.</small>
+          
+          <!-- Inline form embed (optional; keeps users on page). If you prefer link only, remove the iframe below. -->
+          <div style="margin-top:16px">
+            <iframe title="Fresh Home Food — Pre‑Order" aria-label="Pre‑Order Form" src="https://docs.google.com/forms/d/e/1FAIpQLSfg-embed-placeholder/viewform?embedded=true" width="100%" height="760" frameborder="0" style="background:#0b1220;border:1px solid rgba(148,163,184,.2);border-radius:12px"></iframe>
+            <noscript>
+              <p>Form requires JavaScript. Use the <a href="https://forms.gle/WpeC6XsXU51tmo8V8" target="_blank" rel="noopener">direct link</a>.</p>
+            </noscript>
+          </div>
         </div>
       </div>
     </section>
+
+    <div class="floating-cta" aria-label="Quick actions">
+      <a class="fab" href="#order">Pre‑order</a>
+      <a class="fab ghost" href="https://wa.me/917046354607?text=Hi%20Fresh%20Home%20Food" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
   </main>
 
   <footer>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
       <div>© <span id="y"></span> Fresh Home Food</div>
       <div style="display:flex;gap:14px;align-items:center">
-        <a href="#about">About US</a>
+        <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#order" class="btn">Pre‑order</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    // helper: swap WhatsApp number once in one place if needed
+    const WA_NUMBER = '917046354607'; // TODO: replace with your number (countrycode+number)
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a=>{
+      const u = new URL(a.href);
+      u.pathname = '/' + WA_NUMBER;
+      a.href = u.toString();
+    });
+
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // smooth scroll for in‑page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});} 
+      })
+    })
+  </script>
   <script>
     // year
     document.getElementById('y').textContent = new Date().getFullYear();
