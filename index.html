@@ -3,293 +3,214 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fresh Home Food — Daily Homely Meals</title>
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Fresh Home Food — Homely Meals, Made Daily" />
-  <meta property="og:description" content="Limited-batch, homely lunch thalis. Pre-order by 8 am. Delivery 12:15–1:15 pm around Whitefield,Kadugodi,VarthurKodi,Ramagondanahalli." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://freshhomefood.com/" />
-  <meta property="og:image" content="/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fresh Home Food — Homely Meals, Made Daily" />
-  <meta name="twitter:description" content="Limited-batch, homely lunch thalis. Pre-order by 8 am. Delivery 12:15–1:15 pm around Whitefield,Kadugodi,VarthurKodi,Ramagondanahalli." />
-  <meta name="twitter:image" content="/og-image.jpg" />
-  <link rel="icon" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <title>Fresh Home Food — Whitefield Lunch Delivery</title>
 
-  <meta name="description" content="Fresh Home Food delivers clean, homely meals made fresh daily in small batches. Pre-order your thali today." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Fresh, home-style meals delivered daily in Whitefield. Starting at ₹120. Pre-order before 8 am." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --bg:#f9fafb;
-      --text:#1e293b;
-      --muted:#475569;
-      --brand:#0ea5e9;
-      --brand-2:#22d3ee;
-      --card:#ffffff;
-      --radius:20px;
-      --shadow:0 4px 18px rgba(0,0,0,.08);
-      --max:1100px;
+    body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;color:#1e293b}
+    .container{max-width:1000px;margin:auto;padding:20px}
+    h1,h2,h3{margin:10px 0}
+    p{color:#475569}
+
+    .btn{
+      background:#0ea5e9;
+      color:#fff;
+      padding:12px 18px;
+      border:none;
+      border-radius:10px;
+      font-weight:600;
+      display:inline-block;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;line-height:1.6}
-    a{text-decoration:none;color:var(--brand)}
-    header{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(6px);box-shadow:0 1px 4px rgba(0,0,0,.05);z-index:50}
-    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:900}
-    .menu{display:flex;gap:20px;flex-wrap:wrap}
-    .menu a{color:var(--text);font-weight:600}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700;border:none;padding:12px 18px;border-radius:14px;box-shadow:var(--shadow)}
-    .btn:hover{opacity:.9}
-    h1,h2,h3,h4{margin:.5em 0 .4em;line-height:1.3}
-    p{margin:.4em 0}
-    section{padding:60px 0}
-    .section-title{font-size:28px;margin-bottom:10px}
-    .sub{color:var(--muted);margin-bottom:20px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .item{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .steps{counter-reset:step}
-    .step{position:relative;padding-left:50px}
-    .step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:700}
-    .cta{background:linear-gradient(135deg,#e0f2fe,#ccfbf1);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
-    footer{padding:30px 0;border-top:1px solid #e2e8f0;color:var(--muted);text-align:center;font-size:14px}
-    @media(max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    /* floating CTA */
-    .floating-cta{position:fixed;right:18px;bottom:18px;display:flex;gap:10px;z-index:60}
-    .floating-cta .fab{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:999px;border:1px solid rgba(148,163,184,.25);background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#041014;font-weight:800;box-shadow:var(--shadow);text-decoration:none}
-    .floating-cta .ghost{background:rgba(2,8,23,.7);color:var(--text)}
 
-    /* details/summary FAQ */
-    details{background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:14px}
-    details+details{margin-top:10px}
-    summary{font-weight:700;cursor:pointer}
+    .btn.secondary{
+      background:#111827;
+    }
 
-    /* badge strip */
-    .strip{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{font-size:12px;border:1px solid rgba(148,163,184,.25);color:var(--muted);padding:6px 10px;border-radius:999px}
+    .hero{text-align:center;padding:60px 20px}
+    .grid{display:grid;gap:15px}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+    .card{background:#fff;padding:18px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+
+    section{padding:50px 0}
+    .center{text-align:center}
+
+    .floating{
+      position:fixed;
+      bottom:15px;
+      right:15px;
+      display:flex;
+      gap:10px;
+    }
+
+    .floating a{
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:600;
+      text-decoration:none;
+      color:#fff;
+    }
+
+    .wa{background:#22c55e}
+    .order{background:#0ea5e9}
   </style>
-
-  <!-- Schema.org LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "name": "Fresh Home Food",
-    "url": "https://freshhomefood.com/",
-    "image": "https://freshhomefood.com/og-image.jpg",
-    "servesCuisine": "Indian Home Style",
-    "priceRange": "₹₹",
-    "areaServed": "Whitefield,Hopefarm,ITPL,Kadugodi,VarthurKodi,Ramagondanahalli,Seegehalli,Channasandra.",
-    "openingHoursSpecification": [
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:30","closes":"13:15"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"09:30","closes":"13:15"}
-    ],
-    "sameAs": []
-  }
-  </script>
-
-  <!-- GA4 (replace G-XXXX with your id) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-XXXX');
-  </script>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">FH</div>
-        <div>Fresh Home Food</div>
-      </div>
-      <nav class="menu">
-        <a href="#about">Why Us</a>
-        <a href="#menu">Menu</a>
-        <a href="#how">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#areas">Delivery</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn" href="#order">Pre‑Order</a>
-      </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Fresh Home-Style Lunch Delivered in Whitefield</h1>
+    
+    <p>
+      Clean, simple meals cooked every morning.  
+      Starting at ₹120.  
+      Pre-order before 8:00 am → Delivered 12:15–1:15 pm.
+    </p>
+
+    <div style="margin-top:20px">
+      <a class="btn wa" href="https://wa.me/917046354607">Order on WhatsApp</a>
+      <a class="btn secondary" href="https://forms.gle/WpeC6XsXU51tmo8V8">Quick Order Form</a>
     </div>
-  </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container" style="text-align:center">
-        <h1>Homely Meals, Made Fresh Every Single Day</h1>
-        <p style="max-width:600px;margin:0 auto 20px">We cook in small batches with clean ingredients and no shortcuts. Pre‑order your lunch thali or breakfast add‑on, and we’ll deliver it hot to your society gate or office.</p>
-        <a href="#order" class="btn">Pre‑Order Now</a>
-      </div>
-    </section>
+    <p style="margin-top:15px;font-size:14px">
+      Whitefield • ITPL • Kadugodi • Seegehalli • Varthur • Ramagondanahalli
+    </p>
+  </div>
+</section>
 
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">Why Fresh Home Food</h2>
-        <p class="sub">Short answer — we cook what we’d happily feed our own family. Limited menu keeps quality consistent and costs fair.</p>
-        <div class="strip" aria-label="highlights">
-          <span class="pill">FSSAI‑minded hygiene</span>
-          <span class="pill">Cold‑pressed oils</span>
-          <span class="pill">No added colours</span>
-          <span class="pill">Same‑day prep</span>
-        </div>
-        <div class="grid-3" style="margin-top:14px">
-          <div class="item"><h4>Small batches</h4><p>We make a fixed number of plates. This keeps it fresh and avoids waste.</p></div>
-          <div class="item"><h4>Simple ingredients</h4><p>Local veggies, home‑made masalas. No shortcuts.</p></div>
-          <div class="item"><h4>Predictable taste</h4><p>Same style every weekday so you know exactly what you’re getting.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu -->
-    <section id="menu">
-      <div class="container">
-        <h2 class="section-title">Weekly Menu</h2>
-        <p class="sub">Veg thali daily, with optional non‑veg add‑on on Fri & Sun.</p>
-        <div class="grid-3">
-          <div class="item"><h4>Monday</h4><p>Dal, sabzi, rotis/rice, salad, pickle</p></div>
-          <div class="item"><h4>Tuesday</h4><p>Sambar, sabzi, rotis/rice, salad</p></div>
-          <div class="item"><h4>Wednesday</h4><p>Dal fry, sabzi, rotis/rice, salad</p></div>
-          <div class="item"><h4>Thursday</h4><p>Rasam, sabzi, rice/roti, curd</p></div>
-          <div class="item"><h4>Friday</h4><p>Veg thali + chicken/egg add‑on</p></div>
-          <div class="item"><h4>Saturday</h4><p>Veg Special + Desert</p></div>
-          <div class="item"><h4>Sunday</h4><p>Veg thali + fish/egg add‑on</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how">
-      <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <div class="steps">
-          <div class="step"><h4>Subscribe Monthly & Select Meal type by 8 am daily</h4><p>Meals are cooked only to order. Once batches fill, we close for the day.</p></div>
-          <div class="step"><h4>Freshly Cooked</h4><p>Prepared late morning — never stored overnight.</p></div>
-          <div class="step"><h4>Delivered Hot</h4><p>Dropped at your building/ society gate/ office between 12:15–1:15 pm.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing">
-      <div class="container">
-        <h2 class="section-title">Pricing</h2>
-        <div class="grid-3">
-          <div class="item"><h4>Veg Lunch</h4><p>₹120</p></div>
-          <div class="item"><h4>Non‑Veg Add‑On</h4><p>₹150 (Fri/Sun)</p></div>
-          <div class="item"><h4>Breakfast Add‑On</h4><p>₹79 (Mon–Fri)</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Delivery -->
-    <section id="areas">
-      <div class="container">
-        <h2 class="section-title">Delivery Areas</h2>
-        <p class="sub">Currently covering Whitefield,Hopefarm,ITPL,Kadugodi,VarthurKodi,Ramagondanahalli,Seegehalli,Channasandra societies and offices. Expanding soon.</p>
-        <div class="grid-2">
-          <div class="item"><h4>Societies</h4><p>Prestige Shantiniketan, Brigade Metropolis, Republic, DSR Sunrise, etc.</p></div>
-          <div class="item"><h4>Offices</h4><p>ITPL Zone, Whitefield Main Road. Gate drop only.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <h2 class="section-title">FAQ</h2>
-        <div class="grid-2">
-          <details class="item" open>
-            <summary>Is it subscription‑based?</summary>
-            <p>YES. You can for monthly ( 22 days ) plan and choose your preference daily or weekly or continue with default. We’ll also introduce weekly plans later.</p>
-          </details>
-          <details class="item">
-            <summary>How do I pay?</summary>
-            <p>via UPI - advance online. We’ll share further details after you submit the form.</p>
-          </details>
-          <details class="item">
-            <summary>Cut‑off time?</summary>
-            <p>08:00 am for same‑day lunch. Earlier is better — we close once batches fill.</p>
-          </details>
-          <details class="item">
-            <summary>Customizations and allergies</summary>
-            <p>Menu is fixed to maintain quality. Mention allergies in the form and we’ll confirm feasibility.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Is it subscription‑based?","acceptedAnswer":{"@type":"Answer","text":"YES. You can for monthly ( 22 days ) plan and choose your preference daily or weekly or continue with default. We’ll also introduce weekly plans later."}},
-        {"@type":"Question","name":"How do I pay?","acceptedAnswer":{"@type":"Answer","text":"via UPI - advance online. We’ll share further details after you submit the form."}},
-        {"@type":"Question","name":"Cut‑off time?","acceptedAnswer":{"@type":"Answer","text":"08:00 am for same‑day lunch. We close once batches fill."}},
-        {"@type":"Question","name":"Customizations and allergies","acceptedAnswer":{"@type":"Answer","text":"Menu is fixed. Mention allergies in the form and we’ll confirm feasibility."}}
-      ]
-    }
-    </script>
-
-    <!-- Order CTA -->
-    <section id="order">
-      <div class="container">
-        <div class="cta">
-          <h2 style="margin:0">Ready to pre‑order?</h2>
-          <p style="margin:0;color:#cbd5e1">Tell us your name, location, and preferred days. We’ll confirm on WhatsApp.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-            <a class="btn" href="https://forms.gle/WpeC6XsXU51tmo8V8" target="_blank" rel="noopener" aria-label="Open Google pre‑order form">Open Pre‑Order Form</a>
-            <a class="btn" href="https://wa.me/917046354607?text=Hi%20Fresh%20Home%20Food%2C%20I%20want%20to%20pre‑order" target="_blank" rel="noopener" aria-label="Open WhatsApp chat">WhatsApp us</a>
-            <a href="https://forms.gle/WpeC6XsXU51tmo8V8" target="_blank" rel="noopener" style="align-self:center">or copy this link</a>
-          </div>
-          <small style="color:#9ca3af">Note: The form opens in a new tab. After submitting, leave WhatsApp number for quick confirmation.</small>
-        
-        </div>
-      </div>
-    </section>
-
-    <div class="floating-cta" aria-label="Quick actions">
-      <a class="fab" href="#order">Pre‑order</a>
-      <a class="fab ghost" href="https://wa.me/917046354607?text=Hi%20Fresh%20Home%20Food" target="_blank" rel="noopener">WhatsApp</a>
+<!-- HIGHLIGHTS -->
+<section>
+  <div class="container grid grid-3">
+    <div class="card">
+      <h3>₹120 per meal</h3>
+      <p>Affordable, filling, daily lunch</p>
     </div>
-  </main>
+    <div class="card">
+      <h3>Cooked fresh daily</h3>
+      <p>No storage. No reheating.</p>
+    </div>
+    <div class="card">
+      <h3>Limited batches</h3>
+      <p>We close orders once capacity fills</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">© <span id="y"></span> Fresh Home Food · Whitefield, Bangalore</div>
-  </footer>
+<!-- WHY -->
+<section>
+  <div class="container center">
+    <h2>Why Fresh Home Food</h2>
+    <p>
+      We cook what we’d eat at home — simple, clean, consistent food you can rely on every day.
+    </p>
 
-  <script>
-    // helper: swap WhatsApp number once in one place if needed
-    const WA_NUMBER = '917046354607'; // TODO: replace with your number (countrycode+number)
-    document.querySelectorAll('a[href*="wa.me"]').forEach(a=>{
-      const u = new URL(a.href);
-      u.pathname = '/' + WA_NUMBER;
-      a.href = u.toString();
-    });
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card">
+        <h3>Small batches</h3>
+        <p>Quality stays high, no overproduction</p>
+      </div>
+      <div class="card">
+        <h3>Clean ingredients</h3>
+        <p>No shortcuts, no unnecessary additives</p>
+      </div>
+      <div class="card">
+        <h3>Consistent taste</h3>
+        <p>Simple meals you won’t get tired of</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+<!-- WHO IT'S FOR -->
+<section>
+  <div class="container center">
+    <h2>Who This Is For</h2>
 
-    // smooth scroll for in‑page links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href').slice(1);
-        const el=document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});} 
-      })
-    })
-  </script>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card">Working professionals</div>
+      <div class="card">PG / bachelor living</div>
+      <div class="card">Families needing daily meals</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section>
+  <div class="container center">
+    <h2>Sample Weekly Menu</h2>
+
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card">Monday: Dal + Sabzi + Roti/Rice</div>
+      <div class="card">Tuesday: Sambar + Sabzi</div>
+      <div class="card">Wednesday: Dal Fry + Sabzi</div>
+      <div class="card">Thursday: Rasam + Curd</div>
+      <div class="card">Friday: Veg + Chicken/Egg</div>
+      <div class="card">Saturday: Veg Special + Dessert</div>
+      <div class="card">Sunday: Veg + Fish/Egg</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section>
+  <div class="container center">
+    <h2>How It Works</h2>
+
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card">1. Order before 8 am</div>
+      <div class="card">2. We cook fresh</div>
+      <div class="card">3. Delivered by lunch</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container center">
+    <h2>Pricing</h2>
+
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card">Veg Lunch: ₹120</div>
+      <div class="card">Non-Veg Add-On: ₹150</div>
+      <div class="card">Breakfast: ₹79</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section>
+  <div class="container center">
+    <h2>What Customers Say</h2>
+    <div class="card" style="max-width:500px;margin:auto">
+      <p>
+        "Tastes like proper home food. Not oily, not heavy. Delivery is always on time."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section>
+  <div class="container center">
+    <h2>Ready to Order?</h2>
+    <p>Message us or fill the form — we’ll confirm quickly</p>
+
+    <div style="margin-top:20px">
+      <a class="btn wa" href="https://wa.me/917046354607">Order on WhatsApp</a>
+      <a class="btn secondary" href="https://forms.gle/WpeC6XsXU51tmo8V8">Fill Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING BUTTON -->
+<div class="floating">
+  <a class="wa" href="https://wa.me/917046354607">WhatsApp</a>
+  <a class="order" href="https://forms.gle/WpeC6XsXU51tmo8V8">Order</a>
+</div>
+
 </body>
 </html>
