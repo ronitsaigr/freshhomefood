@@ -1,226 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Fresh Home Food | Breakfast & Lunch Delivery</title>
+<title>Fresh Home Food — Breakfast & Lunch</title>
 
-  <meta name="description" content="Fresh home-style breakfast and lunch delivered daily in Whitefield. Simple, clean meals made fresh every day." />
+<meta name="description" content="Fresh home-style breakfast and lunch delivered daily in Whitefield. Clean, simple meals made fresh every day." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      background:#fffaf5;
-      color:#1e293b;
-    }
+<style>
+body{margin:0;font-family:Inter,sans-serif;background:#fffaf5;color:#1e293b}
+.container{max-width:480px;margin:auto;padding:16px}
+h1,h2,h3{margin:10px 0}
+p{color:#475569}
 
-    .container{
-      max-width:480px;
-      margin:auto;
-      padding:16px;
-    }
+.hero{
+  background:linear-gradient(135deg,#fff,#fff5eb);
+  padding:24px;
+  border-radius:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
 
-    h1,h2,h3{
-      margin:10px 0;
-    }
+.btn{
+  display:block;
+  padding:14px;
+  margin-top:10px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:700;
+}
 
-    p{
-      color:#475569;
-      font-size:14px;
-    }
+.primary{background:#22c55e;color:white}
+.secondary{background:#111827;color:white}
 
-    .btn{
-      display:block;
-      width:100%;
-      padding:14px;
-      border-radius:12px;
-      text-align:center;
-      font-weight:700;
-      margin-top:10px;
-    }
+.card{
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  margin-top:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
 
-    .primary{
-      background:#22c55e;
-      color:white;
-    }
+.grid{display:grid;gap:10px}
+.grid-2{grid-template-columns:1fr 1fr}
 
-    .secondary{
-      background:#111827;
-      color:white;
-    }
+.highlight{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+  margin-top:12px;
+}
 
-    .card{
-      background:white;
-      padding:16px;
-      border-radius:16px;
-      margin-top:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-    }
+.mini{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+  font-size:12px;
+}
 
-    .grid{
-      display:grid;
-      gap:10px;
-    }
+.sticky{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  display:flex;
+  gap:8px;
+  padding:10px;
+  box-shadow:0 -4px 12px rgba(0,0,0,0.1);
+}
 
-    .grid-2{
-      grid-template-columns:1fr 1fr;
-    }
+.sticky a{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:700;
+  color:white;
+}
 
-    .highlight{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:8px;
-      margin-top:10px;
-    }
-
-    .mini{
-      background:white;
-      padding:10px;
-      border-radius:10px;
-      text-align:center;
-      font-size:12px;
-    }
-
-    .sticky{
-      position:fixed;
-      bottom:0;
-      left:0;
-      right:0;
-      background:white;
-      display:flex;
-      gap:8px;
-      padding:10px;
-      box-shadow:0 -4px 12px rgba(0,0,0,0.1);
-    }
-
-    .sticky a{
-      flex:1;
-      padding:12px;
-      border-radius:10px;
-      text-align:center;
-      font-weight:700;
-      color:white;
-    }
-
-    .wa{background:#22c55e;}
-    .form{background:#111827;}
-  </style>
+.wa{background:#22c55e}
+.form{background:#111827}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <!-- HERO -->
-  <h1>Home-style meals that actually feel like home</h1>
+<!-- HERO -->
+<div class="hero">
+<h1>Home-style meals that actually feel like home</h1>
 
-  <p>
-    Fresh breakfast and lunch cooked daily.  
-    Breakfast in the morning. Lunch delivered hot between 12:15–1:15 pm.
-  </p>
+<p>
+Fresh breakfast and lunch cooked daily.  
+Breakfast in the morning. Lunch delivered hot between 12:15–1:15 pm.
+</p>
 
-  <div class="highlight">
-    <div class="mini">
-      <strong>Breakfast</strong><br>₹119
-    </div>
-    <div class="mini">
-      <strong>Lunch</strong><br>₹150
-    </div>
-    <div class="mini">
-      <strong>Order by</strong><br>8:00 am
-    </div>
+<div class="highlight">
+  <div class="mini"><strong>Breakfast</strong><br>₹119</div>
+  <div class="mini"><strong>Lunch</strong><br>₹150</div>
+  <div class="mini"><strong>Order by</strong><br>8:00 am</div>
+</div>
+
+<a class="btn primary" href="https://wa.me/917046354607?text=Hi%20Fresh%20Home%20Food%2C%20I%20want%20to%20order%20breakfast%20or%20lunch">
+Order on WhatsApp
+</a>
+
+<a class="btn secondary" href="https://forms.gle/WpeC6XsXU51tmo8V8">
+Fill Order Form
+</a>
+
+</div>
+
+<!-- OFFERINGS -->
+<div class="card">
+<h2>What you can order</h2>
+
+<div class="grid grid-2">
+  <div>
+    <h3>Breakfast</h3>
+    <p>Light, fresh morning meals. Mon–Fri delivery.</p>
   </div>
 
-  <a class="btn primary" href="https://wa.me/917046354607?text=Hi%20Fresh%20Home%20Food%2C%20I%20want%20to%20order%20breakfast%20or%20lunch">
-    Order on WhatsApp
-  </a>
-
-  <a class="btn secondary" href="https://forms.gle/WpeC6XsXU51tmo8V8">
-    Fill Order Form
-  </a>
-
-  <!-- WHAT YOU OFFER -->
-  <div class="card">
-    <h2>What you can order</h2>
-
-    <div class="grid grid-2">
-      <div>
-        <h3>Breakfast</h3>
-        <p>Light, fresh morning meals. Mon–Fri delivery.</p>
-      </div>
-
-      <div>
-        <h3>Lunch</h3>
-        <p>Full veg meals with optional non-veg add-ons.</p>
-      </div>
-    </div>
+  <div>
+    <h3>Lunch</h3>
+    <p>Full veg meals with optional non-veg add-ons.</p>
   </div>
+</div>
+</div>
 
-  <!-- WHY -->
-  <div class="card">
-    <h2>Why choose us</h2>
+<!-- WHY -->
+<div class="card">
+<h2>Why choose us</h2>
 
-    <div class="grid grid-2">
-      <div>Small batch cooking</div>
-      <div>Clean ingredients</div>
-      <div>Daily fresh prep</div>
-      <div>Reliable timing</div>
-    </div>
-  </div>
+<div class="grid grid-2">
+  <div>Small batch cooking</div>
+  <div>Clean ingredients</div>
+  <div>Daily fresh prep</div>
+  <div>Reliable timing</div>
+</div>
+</div>
 
-  <!-- MENU -->
-  <div class="card">
-    <h2>Sample Menu</h2>
+<!-- MENU -->
+<div class="card">
+<h2>Sample Menu</h2>
 
-    <p>Simple rotating weekly meals</p>
+<div class="grid grid-2">
+  <div>Mon: Dal + Sabzi</div>
+  <div>Tue: Sambar</div>
+  <div>Wed: Dal Fry</div>
+  <div>Thu: Rasam + Curd</div>
+  <div>Fri: Veg + Chicken</div>
+  <div>Sat: Veg + Dessert</div>
+</div>
+</div>
 
-    <div class="grid grid-2">
-      <div>Mon: Dal + Sabzi</div>
-      <div>Tue: Sambar + Sabzi</div>
-      <div>Wed: Dal Fry</div>
-      <div>Thu: Rasam + Curd</div>
-      <div>Fri: Veg + Chicken</div>
-      <div>Sat: Veg + Dessert</div>
-    </div>
-  </div>
+<!-- HOW -->
+<div class="card">
+<h2>How it works</h2>
 
-  <!-- HOW -->
-  <div class="card">
-    <h2>How it works</h2>
+<p>1. Order before 8 am</p>
+<p>2. We cook fresh</p>
+<p>3. Breakfast morning • Lunch 12:15–1:15 pm</p>
+</div>
 
-    <p>1. Order before 8 am</p>
-    <p>2. We cook fresh</p>
-    <p>3. Delivered morning & lunch time</p>
-  </div>
+<!-- PRICING -->
+<div class="card">
+<h2>Pricing</h2>
 
-  <!-- PRICING -->
-  <div class="card">
-    <h2>Pricing</h2>
+<p><strong>Breakfast:</strong> ₹119</p>
+<p><strong>Lunch:</strong> ₹150</p>
+<p><strong>Non-Veg Add-on:</strong> ₹220</p>
+</div>
 
-    <p><strong>Breakfast:</strong> ₹119</p>
-    <p><strong>Lunch:</strong> ₹150</p>
-    <p><strong>Non-Veg Add-on:</strong> ₹220</p>
-  </div>
+<!-- TRUST -->
+<div class="card">
+<h2>Customer feedback</h2>
+<p>
+“Tastes like proper home food. Light, consistent, and delivered on time.”
+</p>
+</div>
 
-  <!-- TRUST -->
-  <div class="card">
-    <h2>Customer feedback</h2>
-    <p>
-      “Feels like proper home food. Light, consistent, and delivered on time.”
-    </p>
-  </div>
-
-  <!-- DELIVERY -->
-  <div class="card">
-    <h2>Delivery areas</h2>
-    <p>
-      Whitefield, ITPL, Kadugodi, Seegehalli, Varthur and nearby areas.
-    </p>
-  </div>
+<!-- DELIVERY -->
+<div class="card">
+<h2>Delivery areas</h2>
+<p>
+Whitefield, ITPL, Kadugodi, Seegehalli, Varthur and nearby areas.
+</p>
+</div>
 
 </div>
 
